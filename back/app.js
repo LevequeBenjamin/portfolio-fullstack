@@ -4,7 +4,11 @@
 const express = require('express');
 const helmet = require('helmet');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const userRoutes = require('./routes/user.routes');
+const postRoutes = require('./routes/post.routes');
+const { requireAuth } = require('./middleware/auth.middleware');
 require('dotenv').config({ path: './config/.env' });
 
 const app = express();
@@ -38,7 +42,18 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use(helmet());
+
+// jwt
+app.get('*', requireAuth);
+app.get('/jwtid', requireAuth, (req, res) => {
+	res.status(200).json(req.userId);
+});
+
+// routes
+app.use('/api/user', userRoutes);
+app.use('/api/post', postRoutes);
 
 module.exports = app;

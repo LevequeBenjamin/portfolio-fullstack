@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "username": "admin",
+    "password": "openclassrooms",
+    "database": "database_development_portfolio",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "admin",
+    "password": "openclasrooms",
+    "database": "database_test_portfolio",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "admin",
+    "password": "openclasrooms",
+    "database": "database_production_portfolio",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

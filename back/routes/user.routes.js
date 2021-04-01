@@ -18,3 +18,4 @@ router.delete('/:id', requireAuth, userController.deleteUser);
 
 // exports
 module.exports = router;
+

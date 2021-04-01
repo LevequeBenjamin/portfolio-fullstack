@@ -5,7 +5,7 @@ const router = require('express').Router();
 const postController = require('../controllers/post.controller');
 const multer = require('multer');
 const upload = multer();
-const { requireAuth } = require('../middleware/auth.middleware');
+const { requireAuth, checkAdmin } = require('../middleware/auth.middleware');
 
 // routes
 router.get('/', postController.readPost);

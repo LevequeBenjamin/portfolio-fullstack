@@ -3,7 +3,7 @@
 // imports
 const models = require('../models');
 const bcrypt = require('bcrypt');
-const { generateToken } = require('../middleware/auth.middleware');
+const { generateToken, generateTokenAdmin } = require('../middleware/auth.middleware');
 require('dotenv').config({ path: '../config/.env' });
 
 // const
@@ -51,12 +51,21 @@ exports.login = async (req, res) => {
 						.status(200)
 						.send({ errorPassword: 'Le mot de passe ne correspond pas' });
 				}
+
 				// on crée un token
-				const token = generateToken(user.id);
-				res.cookie('jwt', token, { httpOnly: true, maxAge });
-				res.status(200).send({
-					user: user.id,
-				});
+				if (!user.isAdmin) {
+					const token = generateToken(user.id);
+					res.cookie('jwt', token, { httpOnly: true, maxAge });
+					res.status(200).send({
+						user: user.id,
+					});
+				} else {
+					const token = generateTokenAdmin(user.isAdmin);
+					res.cookie('jwt', token, { httpOnly: true, maxAge });
+					res.status(200).send({
+						user: user.id,
+					});
+				}
 			})
 			.catch(error => res.status(500).send({ error }));
 	} catch (error) {

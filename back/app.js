@@ -47,10 +47,10 @@ app.use(cookieParser());
 app.use(helmet());
 
 // jwt
-app.get('*', requireAuth);
+//app.get('*', requireAuth);
 app.get('/jwtid', requireAuth, (req, res) => {
 	res.status(200).json(req.userId);
-});
+}); 
 
 // routes
 app.use('/api/user', userRoutes);

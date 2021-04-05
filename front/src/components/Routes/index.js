@@ -11,7 +11,6 @@ import {
 import Home from '../../pages/Home';
 import Admin from '../../pages/Admin';
 import Navbar from '../Navbar';
-import Project from '../projects/Project';
 import Footer from '../Footer';
 
 /* ******************** index ******************** */
@@ -22,7 +21,6 @@ const index = () => {
 			<Switch>
 				<Route path="/" exact component={Home} />
 				<Route path="/admin" exact component={Admin} />
-				<Route path="/#portfolio/:id" exact component={Project} />
 				<Redirect to="/" />
 			</Switch>
 			<Footer />

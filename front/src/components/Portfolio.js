@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts } from '../actions/post.actions';
 import { isEmpty } from '../components/Utils';
-import NavProject from './NavProject';
 import Project from './projects/Project';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
@@ -47,7 +46,6 @@ const Portfolio = () => {
 						</div>
 					);
 				})}
-			<NavProject />
 		</div>
 	);
 };

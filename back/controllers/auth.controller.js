@@ -21,7 +21,7 @@ exports.signUp = async (req, res) => {
 				email,
 				username,
 				password: hash,
-				isAdmin: 0,
+				isAdmin: 1,
 			});
 			res.status(201).send({ user: user.id });
 		} catch (err) {
@@ -60,7 +60,7 @@ exports.login = async (req, res) => {
 						user: user.id,
 					});
 				} else {
-					const token = generateTokenAdmin(user.isAdmin);
+					const token = generateTokenAdmin(user.id);
 					res.cookie('jwt', token, { httpOnly: true, maxAge });
 					res.status(200).send({
 						user: user.id,

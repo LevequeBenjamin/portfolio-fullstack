@@ -1,0 +1,29 @@
+
+@keyframes float {
+  0% {
+    transform: translateY(-20px);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: translateY(20px);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateY(-20px);
+    animation-timing-function: ease-in-out;
+  }
+}
+@keyframes refloat {
+  0% {
+    transform: translateY(20px);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: translateY(-20px);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateY(20px);
+    animation-timing-function: ease-in-out;
+  }
+}

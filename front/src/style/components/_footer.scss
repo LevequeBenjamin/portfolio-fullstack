@@ -1,0 +1,40 @@
+.footer {
+	width: 100%;
+	height: 100px;
+	background-color: $color-dark-1;
+	border-top: 1px solid $color-dark-5;
+	.footer-container{
+	max-width: 1440px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	
+	h2 {
+		margin-bottom: 0;
+		margin-top: 20px;
+		color: $color-dark-5;
+	}
+	p {
+		margin-bottom: 20px;
+		margin-top: 0;
+		font-size: 1rem;
+	}
+	.social {
+		display: flex;
+		&__mg {
+			font-size: 1.8rem;
+			margin-left: 10px;
+			margin-right: 10px;
+			a {
+				text-decoration: none;
+				color: $color-dark-5;
+				:hover {
+					color: #9065e9;
+				}
+			}
+		}
+	}}
+}

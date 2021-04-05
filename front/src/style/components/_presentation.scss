@@ -36,6 +36,23 @@
 				font-size: 1rem;
 			}
 		}
+		.telecharger {
+			background-color: $color-dark-5;
+			width: 180px;
+			height: 48px;
+			border-radius: 10px;
+			animation: float 3s infinite;
+			margin: auto;
+			a{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: $white;
+				font-weight: bold;
+				height: 100%;
+				width: 100%;
+			}
+		}
 		.description-container {
 			display: flex;
 			flex-direction: column;

@@ -18,6 +18,11 @@ module.exports = {
           key: 'id'
         },
       },
+      title: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        onDelete: 'CASCADE',
+      },
       content: {
         allowNull: false,
         type: Sequelize.STRING,

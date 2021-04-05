@@ -18,6 +18,10 @@ const Home = () => {
 				<Portfolio />
 			</div>
 			<div id="contact" className="contact-container">
+				<div className='title-contact'>
+				<h2>Contactez-moi</h2>
+				<p>Envie de me présenter un projet, ou tout simplement dire bonjour?</p>
+				</div>
 				<Contact />
 			</div>
 		</main>

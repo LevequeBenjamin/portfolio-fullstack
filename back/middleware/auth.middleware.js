@@ -12,8 +12,8 @@ const maxAge = 1 * 24 * 60 * 60 * 1000;
 // };
 
 //* ******************** generateTokenAdmin ******************** *//
-exports.generateTokenAdmin = ( isAdmin) => {
-	return jwt.sign({ isAdmin }, process.env.JWT_TOKEN_ADMIN, {
+exports.generateTokenAdmin = ( id ) => {
+	return jwt.sign({ id }, process.env.JWT_TOKEN_ADMIN, {
 		expiresIn: maxAge,
 	});
 };
@@ -56,8 +56,8 @@ exports.checkAdmin = async (req, res, next) => {
 			if (err) {
 				console.log(err);
 			} else {
-				const isAdmin = decodedToken.isAdmin;
-				console.log(isAdmin)
+				const userId = decodedToken.id;
+				req.userId = userId;
 				return next();
 			}
 		});

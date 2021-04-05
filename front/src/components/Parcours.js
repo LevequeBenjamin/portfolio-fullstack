@@ -1,4 +1,5 @@
 import React from 'react';
+import Typical from 'react-typical';
 
 const Parcours = () => {
 	return (
@@ -15,10 +16,18 @@ const Parcours = () => {
 					d'Annecy.
 				</p>
 			</div>
+			<div>
+				<p>--------------------
+			<Typical
+							steps={['javascript', 1000, 'nodejs', 1000, 'python', 1000]}
+							loop={Infinity}
+							wrapper="b"
+						/>-------------------</p>
+			</div>
 			<div className="icons">
-        <img src='./img/icons/js-square-brands.svg' alt='javascript'/>
-        <img src='./img/icons/node-js-brands.svg' alt='nodejs'/>
-        <img src='./img/icons/python-brands.svg' alt='python'/>
+        <img className='icons-a' src='./img/icons/js-square-brands.svg' alt='javascript'/>
+        <img className='icons-b' src='./img/icons/node-js-brands.svg' alt='nodejs'/>
+        <img className='icons-a' src='./img/icons/python-brands.svg' alt='python'/>
       </div>
 		</div>
 	);

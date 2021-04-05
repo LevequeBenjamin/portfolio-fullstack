@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Project = () => {
+const Project = ({project}) => {
   return (
     <div className='project'>
-      Project
+      <h1>{project.title}</h1>
+      <img src={project.imageUrl} alt='image-projet'/>
     </div>
   );
 };

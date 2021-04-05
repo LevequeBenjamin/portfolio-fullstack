@@ -1,10 +1,39 @@
 .portfolio-container{
-  height: 100vh;
-  height: 100vh;
+	position: relative;
   height: 100vh;
 	margin-top: 45px;
 	max-width: 1190px;
 	margin-left: auto;
 	margin-right: auto;
 	border-bottom: 1px solid $grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	img{
+		width: 400px;
+		height: 300px;
+		border-radius: 10px;
+		object-fit: cover;
+	}
+	.right-arrow{
+		position: absolute;
+		top: 50%;
+		right: 32px;
+		font-size: 3rem;
+		color: $color-dark-5;
+		z-index: 10;
+		cursor: pointer;
+		user-select: none;
+	}
+	.left-arrow{
+		position: absolute;
+		top: 50%;
+		left: 32px;
+		font-size: 3rem;
+		color: $color-dark-5;
+		z-index: 10;
+		cursor: pointer;
+		user-select: none;
+	}
+
 }

@@ -8,7 +8,7 @@ const pipeline = promisify(require('stream').pipeline);
 
 /* ******************** createPost ******************** */
 exports.createPost = async (req, res) => {
-	let { content, video, lienGithub } = req.body;
+	let { title, content, video, lienGithub } = req.body;
 	let userId = req.userId;
 
 	let filename;
@@ -24,6 +24,7 @@ exports.createPost = async (req, res) => {
 
 	try {
 		await models.Post.create({
+			title: title,
 			content: content,
 			imageUrl: req.file != null ? './uploads/posts/' + filename : '',
 			UserId: userId,

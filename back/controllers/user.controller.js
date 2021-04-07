@@ -45,7 +45,7 @@ exports.getAllUsers = async (req, res) => {
 				'updatedAt',
 			],
 		});
-		if (user) {
+		if (user > []) {
 			res.status(200).send(user);
 		} else {
 			res.status(404).send({ error: 'users not found !' });

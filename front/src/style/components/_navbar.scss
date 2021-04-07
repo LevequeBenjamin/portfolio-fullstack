@@ -24,6 +24,15 @@
 		}
 		h3{
 			color: $white;
+			height: 40px;
+			width: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 5px;
+			&:hover{
+				background-color: $color-1;
+			}
 		}
 	}
 }

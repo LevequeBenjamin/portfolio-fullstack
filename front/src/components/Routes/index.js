@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Admin from '../../pages/Admin';
+import ProjectPage from '../../pages/ProjectPage';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
@@ -20,6 +21,7 @@ const index = () => {
 			<Navbar />
 			<Switch>
 				<Route path="/" exact component={Home} />
+				<Route path="/project" exact component={ProjectPage} />
 				<Route path="/admin" exact component={Admin} />
 				<Redirect to="/" />
 			</Switch>

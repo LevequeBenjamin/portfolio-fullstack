@@ -6,7 +6,18 @@ const Presentation = () => {
 		<div className="presentation-center">
 			<div className="presentation-justify">
 				<div className="img-container">
+				<i class="fab fa-python"></i>
+				<i class="fab fa-html5"></i>
+				<i class="fab fa-node-js"></i>
+				<i class="fab fa-github-alt"></i>
+				<i class="fas fa-code"></i>
+			
 					<img src="./img/benjamin-leveque.jpg" alt="profil-pic" />
+					<i class="fab fa-js-square"></i>
+					<i class="fab fa-css3-alt"></i>
+					<i class="fas fa-code-branch"></i>
+					<i class="fab fa-codepen"></i>
+					
 				</div>
 				<div className="title-container">
 					<h1>Benjamin Lévêque</h1>

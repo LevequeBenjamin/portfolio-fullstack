@@ -43,6 +43,11 @@ module.exports = {
         type: Sequelize.STRING,
         onDelete: 'CASCADE',
       },
+      date:{
+        allowNull: false,
+        type: Sequelize.STRING,
+        onDelete: 'CASCADE',
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -8,7 +8,7 @@ const pipeline = promisify(require('stream').pipeline);
 
 /* ******************** createPost ******************** */
 exports.createPost = async (req, res) => {
-	let { title, content, video, lienGithub } = req.body;
+	let { title, content, video, lienGithub, date } = req.body;
 	let userId = req.userId;
 
 	let filename;
@@ -18,7 +18,7 @@ exports.createPost = async (req, res) => {
 
 		await pipeline(
 			req.file.stream,
-			fs.createWriteStream(`${__dirname}/../uploads/posts/${filename}`),
+			fs.createWriteStream(`${__dirname}/../../front/public/uploads/posts/${filename}`),
 		);
 	}
 
@@ -30,6 +30,7 @@ exports.createPost = async (req, res) => {
 			UserId: userId,
 			video: video,
 			lienGithub: lienGithub,
+			date: date,
 		})
 			.then(newPost => res.status(201).send({ newPost }))
 			.catch(error => res.status(400).send({ error }));
@@ -118,7 +119,7 @@ exports.deletePost = async (req, res) => {
 		});
 		let filename = post.dataValues.imageUrl.split('/uploads/')[1];
 		if (filename !== undefined) {
-			fs.unlink(`${__dirname}/../uploads/${filename}`, function (err) {
+			fs.unlink(`${__dirname}/../../front/public/uploads/${filename}`, function (err) {
 				if (err) {
 					console.log('error');
 				} else {

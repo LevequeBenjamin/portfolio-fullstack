@@ -28,13 +28,83 @@
   }
 }
 
+@keyframes floatBall {
+  0% {
+    transform: translateX(40px) rotate(20deg);
+  }
+  50% {
+    transform: translateX(-40px) rotate(-20deg);
+  }
+  100% {
+    transform: translateX(40px) rotate(20deg);
+  }
+}
+
 @keyframes apparition{
   from{
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateX(200px);
   }
   to{
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bubble{
+  from{
+    opacity: 1;
+    transform: translateY(50px);
+    color: $color-dark-5;
+  }
+  to{
+    opacity: 0;
     transform: translateY(0);
+    color: $color-1;
+  }
+}
+
+@keyframes pulse{
+  0%{
+    color: $color-dark-5;
+  }
+  100%{
+    color: $color-1;
+  }
+}
+
+@keyframes pulseBorder{
+  0%{
+    border: 2px solid $color-dark-5;
+    border-radius: 10px;
+  }
+  50%{
+    border: 2px solid $color-1;
+    border-radius: 150px;
+  }
+  100%{
+    border: 2px solid $color-dark-5;
+    border-radius: 10px;
+  }
+}
+
+@keyframes pulseBorderImg{
+  0%{
+    border: 5px solid $color-dark-5;
+  }
+  100%{
+    border: 5px solid $color-1;
+  }
+}
+
+@keyframes scaleProject{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.4) translateX(100px);
+  }
+  100%{
+    transform: scale(1);
   }
 }

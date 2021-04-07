@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
     video: DataTypes.STRING,
-    lienGithub: DataTypes.STRING
+    lienGithub: DataTypes.STRING,
+    date: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Post',

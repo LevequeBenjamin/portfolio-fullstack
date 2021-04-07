@@ -40,6 +40,14 @@ const Footer = () => {
 					</a>
 				</div>
 			</div>
+			<div className='copyright'>
+				<p>
+				<i class="far fa-copyright"></i> 2021 developped with <i class="fas fa-heart"></i> by Benjamin Lévêque
+				</p>
+				<p>
+				<i class="fas fa-cogs"></i> Stack utilisés : nodeJS, express, mysql, sequelize, react, redux
+				</p>
+			</div>
       </div>
 		</nav>
 	);

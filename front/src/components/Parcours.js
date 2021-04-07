@@ -16,19 +16,51 @@ const Parcours = () => {
 					d'Annecy.
 				</p>
 			</div>
-			<div>
-				<p>--------------------
-			<Typical
-							steps={['javascript', 1000, 'nodejs', 1000, 'python', 1000]}
-							loop={Infinity}
-							wrapper="b"
-						/>-------------------</p>
+			<div className="parcours-schema">
+				<div className="parcours-schema-description">
+					<i class="fas fa-graduation-cap"></i>
+					<h4>1. Autodidacte</h4>
+					<p>
+						Je forge mon apprentissage par l'expérience, quand j'ai du temps
+						libre je passe en mode veille technologique
+					</p>
+				</div>
+				<div className="parcours-schema-description">
+				<i class="fas fa-network-wired"></i>
+
+					<h4>2. Ma mission</h4>
+					<p>
+						Imaginer, concevoir puis programmer des projets web en proposant des
+						solutions techniques et automatisées.
+					</p>
+				</div>
+
+				<div className="parcours-schema-description">
+			
+					<i class="fas fa-briefcase"></i>
+					<h4>3. Alternance</h4>
+					<p>
+						Je recherche une alternance pour un poste d'administrateur
+						infrastructure et cloud. Début d'année 2022.
+					</p>
+				</div>
 			</div>
+
 			<div className="icons">
-        <img className='icons-a' src='./img/icons/js-square-brands.svg' alt='javascript'/>
-        <img className='icons-b' src='./img/icons/node-js-brands.svg' alt='nodejs'/>
-        <img className='icons-a' src='./img/icons/python-brands.svg' alt='python'/>
-      </div>
+				<p>
+					--------------------
+					<Typical
+						steps={['javascript', 1000, 'nodejs', 1000, 'python', 1000]}
+						loop={Infinity}
+						wrapper="b"
+					/>
+					-------------------
+				</p>
+
+				<i class="fab fa-js-square"></i>
+				<i class="fab fa-node-js"></i>
+				<i class="fab fa-python"></i>
+			</div>
 		</div>
 	);
 };

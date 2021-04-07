@@ -15,12 +15,18 @@ const Home = () => {
 				<Parcours />
 			</div>
 			<div id="portfolio" className="portfolio-container">
+			<div className='project-title'>
+				<h3>Mon portfolio</h3>
+				<p>
+					Durant mon apprentissage j'ai effectué quelques travaux.
+				</p>
+			</div>
 				<Portfolio />
 			</div>
 			<div id="contact" className="contact-container">
 				<div className='title-contact'>
 				<h2>Contactez-moi</h2>
-				<p>Envie de me présenter un projet, ou tout simplement dire bonjour?</p>
+				<p>Mon profil vous intéresse et vous avez un poste à me proposer, ou tout simplement dire bonjour?</p>
 				</div>
 				<Contact />
 			</div>

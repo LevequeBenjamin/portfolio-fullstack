@@ -49,15 +49,16 @@ exports.requireAuth = async (req, res, next) => {
 //* ******************** requireAuth end ******************** *//
 
 //* ******************** checkAdmin ******************** *//
-exports.checkAdmin = async (req, res, next) => {
+exports.checkAdmin = (req, res, next) => {
 	const token = req.cookies.jwt;
 	if (token) {
-		jwt.verify(token, process.env.JWT_TOKEN_ADMIN, async (err, decodedToken) => {
+		jwt.verify(token, process.env.JWT_TOKEN_ADMIN, (err, decodedToken) => {
 			if (err) {
 				console.log(err);
 			} else {
 				const userId = decodedToken.id;
 				req.userId = userId;
+				console.log(userId)
 				return next();
 			}
 		});

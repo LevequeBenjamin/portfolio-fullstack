@@ -7,12 +7,18 @@ const ContactForm = () => {
 	const [phone, setPhone] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
+	const [focusedName, setFocusedName] = useState(false);
+	const [focusedCompany, setFocusedCompany] = useState(false);
+	const [focusedPhone, setFocusedPhone] = useState(false);
+	const [focusedEmail, setFocusedEmail] = useState(false);
+	const [focusedMessage, setFocusedMessage] = useState(false);
+	
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		let nameS = document.getElementById('name');
-		let emailS = document.getElementById('email');
-		let messageS = document.getElementById('message');
+		let nameS = document.getElementById('nameLabel');
+		let emailS = document.getElementById('emailLabel');
+		let messageS = document.getElementById('messageLabel');
 		let formMess = document.querySelector('.form-message');
 
 		const isEmail = () => {
@@ -74,9 +80,9 @@ const ContactForm = () => {
 				formMess.style.background = '#00c1ec';
 				formMess.style.opacity = '1';
 
-				document.getElementById('name').classList.remove('error');
-				document.getElementById('email').classList.remove('error');
-				document.getElementById('message').classList.remove('error');
+				document.getElementById('nameLabel').classList.remove('error');
+				document.getElementById('emailLabel').classList.remove('error');
+				document.getElementById('messageLabel').classList.remove('error');
 				setName('');
 				setCompany('');
 				setPhone('');
@@ -97,51 +103,64 @@ const ContactForm = () => {
 	return (
 		<form className="contact-form">
 			<div className="form-content">
+				<div className='form-relative'>
+				<label id='nameLabel' htmlFor='name' style={{top: focusedName ? '-5px' : ''}}>nom *</label>
 				<input
 					type="text"
 					id="name"
 					name="name"
 					required
 					onChange={e => setName(e.target.value)}
-					placeholder="nom *"
 					value={name}
+					onFocus={() => setFocusedName(true)}
 				/>
+				</div>
+				<div className='form-relative'>
+				<label htmlFor='compagny' style={{top: focusedCompany ? '-5px' : ''}}>société</label>
 				<input
 					type="text"
 					id="company"
 					name="company"
 					onChange={e => setCompany(e.target.value)}
-					placeholder="société"
 					value={company}
+					onFocus={() => setFocusedCompany(true)}
 				/>
+				</div>
+				<div className='form-relative'>
+				<label htmlFor='phone' style={{top: focusedPhone ? '-5px' : ''}}>téléphone</label>
 				<input
 					type="text"
 					id="phone"
 					name="phone"
 					onChange={e => setPhone(e.target.value)}
-					placeholder="téléphone"
 					value={phone}
+					onFocus={() => setFocusedPhone(true)}
 				/>
+				</div>
 				<div className="email-content">
 					<label id="not-mail">Email non valide</label>
+					<label id="emailLabel" htmlFor='email' style={{top: focusedEmail ? '-5px' : ''}}>email *</label>
 					<input
 						type="mail"
 						id="email"
 						name="email"
 						required
 						onChange={e => setEmail(e.target.value)}
-						placeholder="email *"
 						value={email}
+						onFocus={() => setFocusedEmail(true)}
 					/>
 				</div>
+				<div className='form-relative'>
+				<label id="messageLabel" htmlFor='message' style={{top: focusedMessage ? '-5px' : ''}}>message *</label>
 				<textarea
 					id="message"
 					name="message"
 					onChange={e => setMessage(e.target.value)}
-					placeholder="message *"
 					value={message}
 					required
+					onFocus={() => setFocusedMessage(true)}
 				/>
+				</div>
 			</div>
 			<input
 				className="button hover"

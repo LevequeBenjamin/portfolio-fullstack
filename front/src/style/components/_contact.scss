@@ -2,58 +2,91 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
-.contact-form{
+.contact-form {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 }
 .contact-container {
-	.title-contact {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		h2 {
-			color: $color-dark-5;
-			font-size: 2rem;
-			margin-bottom: 10px;
-		}
-	}
 	display: grid;
-	grid-template-rows: 30% 70%;
+	grid-template-rows: 20% 80%;
 	height: 100vh;
 	padding-top: 48px;
 	max-width: 1190px;
 	margin-left: auto;
 	margin-right: auto;
+	.title-contact {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		h3 {
+			color: $color-dark-5;
+			font-size: 3rem;
+			margin-bottom: 20px;
+			font-family: $font-1;
+		}
+	}
 
 	.form-content {
-		display: grid;
-		grid-template-rows: repeat(4, 1fr) 100px;
-
+		display: flex;
+		flex-direction: column;
+		background-color: $color-dark-4;
+		padding: 10px;
+		border-radius: 10px;
+		.form-relative {
+			position: relative;
+			label {
+				position: absolute;
+				left: 20px;
+				top: 14px;
+				color: $color-dark-5;
+				font-weight: bold;
+				transition: 0.2s;
+				background-color: $color-dark-4;
+			}
+		}
 		input,
 		textarea {
-			background: none;
-			font-family: $font-1;
+			background-color: $color-dark-4;
+			border: 1px solid $grey;
+			resize: none;
+			margin: 10px;
+			padding: 10px 10px 10px 10px;
+			border-radius: 10px;
 			color: $white;
-			border-bottom: 1px solid $color-2;
+			width: 240px;
+			height: 60px;
+			
+
+			&:focus {
+				border: 2px solid $color-dark-5;
+				background-color: $color-dark-4;
+			}
 		}
-		::placeholder {
-			color: $color-dark-5;
+		#message {
+			padding-top: 30px;
+			width: 400px;
+			height: 200px;
 		}
-		input {
-			padding: 24px 0 12px;
-			width: 100%;
-		}
+
 		.email-content {
 			position: relative;
-			width: 100%;
-			border-bottom: 1px solid $color-2;
+
+			label {
+				position: absolute;
+				left: 20px;
+				top: 14px;
+				color: $color-dark-5;
+				font-weight: bold;
+				background-color: $color-dark-4;
+			}
 
 			#not-mail {
 				display: none;
 				position: absolute;
 				top: 8px;
+				left: 100px;
 				color: $red;
 				right: 0;
 				transform-origin: 50% 50%;
@@ -93,17 +126,11 @@
 					transform: translate(0px, 0px);
 				}
 			}
-			input {
-				border: none;
-			}
-		}
-		textarea {
-			resize: none;
-			padding: 24px 0;
+			
 		}
 	}
-	.error::placeholder {
-		color: $red;
+	.error {
+		color: $red !important;
 	}
 	.form-message {
 		margin-top: 10px;
@@ -150,9 +177,7 @@
 }
 .email .content p,
 .phone .content p {
-	&:hover{
+	&:hover {
 		color: $color-1;
 	}
 }
-
-

@@ -40,7 +40,7 @@ const Portfolio = () => {
 							className={index === current ? 'slide active' : 'slide'}
 							key={index}
 						>
-							{index === current && (
+							{index === current &&(
 								<Project project={project} key={project.id} />
 							)}
 						</div>

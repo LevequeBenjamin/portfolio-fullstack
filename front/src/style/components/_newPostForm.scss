@@ -1,0 +1,105 @@
+.previ-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+.newpostForm-container {
+	position: relative;
+	padding: 20px;
+	border: 1px solid $grey;
+	//background-color: $color-dark-4;
+	border-radius: 10px;
+	margin: 10px 10px 10px 10px;
+	.post-form {
+		display: flex;
+		flex-direction: column;
+	}
+	.form-relative {
+		position: relative;
+		label {
+			position: absolute;
+			left: 20px;
+			top: 10px;
+			color: $color-dark-5;
+			font-weight: bold;
+		}
+		textarea {
+			background-color: $color-dark-1;
+			border: 1px solid $grey;
+			resize: none;
+			margin: 10px;
+			padding: 20px 10px 10px 10px;
+			border-radius: 10px;
+			color: $white;
+
+			&:focus {
+				border: 2px solid $color-dark-5;
+				background-color: $color-dark-4;
+			}
+		}
+		#title {
+			width: 270px;
+		}
+		#content {
+			width: 460px;
+			height: 100px;
+		}
+		#lienGithub {
+			width: 460px;
+		}
+		#date {
+			width: 270px;
+		}
+		#stack {
+			width: 270px;
+		}
+	}
+
+	.footer-form {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+
+		.icons {
+			position: relative;
+			cursor: pointer;
+			width: 30px;
+			height: 20px;
+
+			img {
+				position: absolute;
+				height: 40px;
+				width: 40px;
+			}
+
+			input {
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+
+				&::-webkit-file-upload-button {
+					cursor: pointer;
+				}
+			}
+		}
+		.btn-newPost {
+			display: flex;
+			.send{
+				background: $color-dark-5;
+			}
+			button {
+				border-radius: 10px;
+				margin-right: 8px;
+				background-color: #78e08f;
+				height: 40px;
+				width: 100px;
+				color: $white;
+				font-family: $font-1;
+				&:hover {
+					background: $color-1;
+				}
+			}
+		}
+	}
+}

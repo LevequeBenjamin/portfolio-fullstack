@@ -8,7 +8,7 @@ const pipeline = promisify(require('stream').pipeline);
 
 /* ******************** createPost ******************** */
 exports.createPost = async (req, res) => {
-	let { title, content, video, lienGithub, date } = req.body;
+	let { title, content, video, lienGithub, date, stack } = req.body;
 	let userId = req.userId;
 
 	let filename;
@@ -30,6 +30,7 @@ exports.createPost = async (req, res) => {
 			UserId: userId,
 			video: video,
 			lienGithub: lienGithub,
+			stack: stack,
 			date: date,
 		})
 			.then(newPost => res.status(201).send({ newPost }))
@@ -44,7 +45,6 @@ exports.createPost = async (req, res) => {
 exports.readPost = async (req, res) => {
 	try {
 		const posts = await models.Post.findAll({
-			order: [['createdAt', 'DESC']],
 			include: [
 				{
 					model: models.User,

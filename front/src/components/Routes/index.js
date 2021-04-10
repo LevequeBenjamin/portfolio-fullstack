@@ -13,6 +13,7 @@ import Admin from '../../pages/Admin';
 import ProjectPage from '../../pages/ProjectPage';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import ContactPage from '../../pages/ContactPage';
 
 /* ******************** index ******************** */
 const index = () => {
@@ -22,6 +23,7 @@ const index = () => {
 			<Switch>
 				<Route path="/" exact component={Home} />
 				<Route path="/project" exact component={ProjectPage} />
+				<Route path="/contact" exact component={ContactPage} />
 				<Route path="/admin" exact component={Admin} />
 				<Redirect to="/" />
 			</Switch>

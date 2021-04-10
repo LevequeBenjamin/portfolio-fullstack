@@ -48,7 +48,7 @@ app.use(helmet());
 
 // jwt
 //app.get('*', requireAuth);
-app.get('/jwtid', requireAuth, (req, res) => {
+app.get('/jwtid', checkAdmin, (req, res) => {
 	res.status(200).json(req.userId);
 }); 
 

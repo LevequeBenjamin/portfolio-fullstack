@@ -1,0 +1,32 @@
+.projectPage-container {
+	min-height: 100vh;
+	margin-top: 80px;
+	max-width: 1190px;
+	margin-left: auto;
+	margin-right: auto;
+  .project-title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+    margin-bottom: 60px;
+		h3 {
+			margin-bottom: 20px;
+			font-size: 3rem;
+			font-family: $font-1;
+			color: $color-dark-5;
+		}
+  }
+	.project-container {
+		display: flex;
+		flex-wrap: wrap;
+    .project{
+      margin: 20px;
+			overflow: hidden;
+			transition: 0.2s;
+			&:hover{
+				transform: scale(1.04);
+			}
+    }
+	}
+}

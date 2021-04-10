@@ -8,11 +8,15 @@
 	text-align: center;
 	.presentation-center {
 		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-
+		display: grid;
+		grid-template-rows: 80% 20%;
+		.presentation-justify{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 48px;
+		}
 		.img-container {
 			margin-bottom: 50px;
 			position: relative;
@@ -22,64 +26,62 @@
 				width: 150px;
 				border-radius: 80px;
 				border: 5px solid $color-dark-5;
-				//animation: pulseBorderImg 3s infinite;
 			}
 			.fa-python {
 				position: absolute;
 				top: -60px;
-				left: 150px;
 				animation: bubble 1.5s infinite $courbe;
 				font-size: 1.4rem;
 			}
 			.fa-html5 {
 				position: absolute;
+				left: -20px;
 				top: 0px;
-				left: 100px;
 				animation: bubble 2.2s infinite $courbe;
 			}
 			.fa-node-js {
 				position: absolute;
 				top: 40px;
-				left: 60px;
+				left: -20px;
 				animation: bubble 1.8s infinite $courbe;
 				font-size: 1.4rem;
 			}
 			.fa-github-alt {
 				position: absolute;
 				top: 80px;
-				left: 80px;
+				left: -40px;
 				animation: bubble 1.3s infinite $courbe;
 			}
 			.fa-code {
 				position: absolute;
 				bottom: 10px;
-				left: 100px;
+				//right: 100px;
 				animation: bubble 2.4s infinite $courbe;
 				font-size: 1.4rem;
 			}
 			.fa-js-square {
 				position: absolute;
-				bottom: -20px;
-				right: 150px;
+				//bottom: -20px;
+				right: -40px;
 				animation: bubble 1.6s infinite $courbe;
 			}
 			.fa-css3-alt {
 				position: absolute;
-				top: -10px;
-				right: 80px;
+				top: -50px;
+				right: 20px;
 				animation: bubble 1.9s infinite $courbe;
 			}
 			.fa-code-branch {
 				position: absolute;
 				top: 30px;
-				right: 80px;
+				//right: 80px;
 				animation: bubble 2.1s infinite $courbe;
 				font-size: 1.4rem;
 			}
 			.fa-codepen {
 				position: absolute;
 				top: 100px;
-				right: 60px;
+				//right: 60px;
 				animation: bubble 1.7s infinite $courbe;
 			}
 		}
@@ -88,13 +90,14 @@
 			h1 {
 				font-family: $font-2;
 				font-weight: normal;
-				margin-bottom: 10px;
+				margin-bottom: 20px;
 				color: $color-dark-5;
+				font-size: 3rem;
 			}
 			h2 {
 				font-family: $font-2;
 				font-weight: normal;
-				font-size: 1rem;
+				font-size: 1.2rem;
 			}
 		}
 		.telecharger {
@@ -102,8 +105,6 @@
 			width: 180px;
 			height: 48px;
 			border-radius: 10px;
-			//animation: float 3s infinite;
-			margin: auto;
 			&:hover{
 			background: $color-1;
 			}
@@ -125,11 +126,8 @@
 			align-items: center;
 			h3 {
 				font-family: $font-1;
-				font-size: 1.6rem;
+				font-size: 1.8rem;
 				margin-bottom: 10px;
-			}
-			p {
-				font-weight: normal;
 			}
 		}
 	}

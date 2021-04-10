@@ -4,7 +4,7 @@
 const router = require('express').Router();
 const authController = require('../controllers/auth.controller');
 const userController = require('../controllers/user.controller');
-const { requireAuth } = require('../middleware/auth.middleware');
+const { checkAdmin } = require('../middleware/auth.middleware');
 
 // auth routes
 router.post('/register', authController.signUp);
@@ -14,7 +14,7 @@ router.get('/logout', authController.logout);
 // user routes
 router.get('/:id', userController.getUser);
 router.get('/', userController.getAllUsers);
-router.delete('/:id', requireAuth, userController.deleteUser);
+router.delete('/:id', checkAdmin, userController.deleteUser);
 
 // exports
 module.exports = router;

@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     imageUrl: DataTypes.STRING,
     video: DataTypes.STRING,
     lienGithub: DataTypes.STRING,
+    stack: DataTypes.STRING,
     date: DataTypes.STRING,
   }, {
     sequelize,

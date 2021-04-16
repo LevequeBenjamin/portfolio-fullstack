@@ -1,3 +1,6 @@
+// ******************** pages/ProjectPage.js ******************** //
+
+// imports
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts } from '../actions/post.actions';
@@ -5,6 +8,7 @@ import { isEmpty } from '../components/Utils';
 import Fade from 'react-reveal/Fade';
 import Projects from '../components/projects/Projects';
 
+/* ******************** ProjectPage ******************** */
 const ProjectPage = () => {
 	// useState
 	const [loadPost, setLoadPost] = useState(true);
@@ -26,16 +30,17 @@ const ProjectPage = () => {
 				<div className="project-title">
 					<h3>Mon portfolio</h3>
 				</div>
-				</Fade>
+			</Fade>
 			<div className="project-container">
 				{!isEmpty(projects[0]) &&
 					projects.map(project => {
 						return <Projects project={project} key={project.id} />;
 					})}
 			</div>
-			
 		</div>
 	);
 };
+/* ******************** ProjectPage end ******************** */
 
+// export
 export default ProjectPage;

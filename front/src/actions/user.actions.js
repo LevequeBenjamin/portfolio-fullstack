@@ -13,7 +13,7 @@ export const getUser = uid => {
 	return dispatch => {
 		return axios({
 			method: 'get',
-			url: `http://localhost:5000/api/user/${uid}`,
+			url: `https://api-benjamin-codeur.herokuapp.com/api/user/${uid}`,
 			withCredentials: true,
 		})
 			.then(res => {

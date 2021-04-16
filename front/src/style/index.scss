@@ -2,6 +2,7 @@
 @import 'utils/keyframes';
 @import 'settings';
 @import 'base/font';
+@import 'layout/main';
 @import 'pages/projectPage';
 @import 'pages/admin';
 @import 'pages/contactPage';
@@ -12,3 +13,8 @@
 @import 'components/contact';
 @import 'components/newPostForm';
 @import 'components/footer';
+@import 'mediaqueries/contactSmall';
+@import 'mediaqueries/parcoursSmall';
+@import 'mediaqueries/portfolioSmall';
+@import 'mediaqueries/presentationSmall';
+@import 'mediaqueries/projectPageSmall';

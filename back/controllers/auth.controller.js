@@ -3,7 +3,10 @@
 // imports
 const models = require('../models');
 const bcrypt = require('bcrypt');
-const { generateToken, generateTokenAdmin } = require('../middleware/auth.middleware');
+const {
+	generateToken,
+	generateTokenAdmin,
+} = require('../middleware/auth.middleware');
 require('dotenv').config({ path: '../config/.env' });
 
 // const
@@ -21,7 +24,7 @@ exports.signUp = async (req, res) => {
 				email,
 				username,
 				password: hash,
-				isAdmin: 1,
+				isAdmin: 0,
 			});
 			res.status(201).send({ user: user.id });
 		} catch (err) {
@@ -55,13 +58,23 @@ exports.login = async (req, res) => {
 				// on crée un token
 				if (!user.isAdmin) {
 					const token = generateToken(user.id);
-					res.cookie('jwt', token, { httpOnly: true, maxAge });
+					res.cookie('jwt', token, {
+						httpOnly: true,
+						maxAge: maxAge,
+						sameSite:'none',
+						secure: true,
+					});
 					res.status(200).send({
 						user: user.id,
 					});
 				} else {
 					const token = generateTokenAdmin(user.id);
-					res.cookie('jwt', token, { httpOnly: true, maxAge });
+					res.cookie('jwt', token, {
+						httpOnly: true,
+						maxAge: maxAge,
+						sameSite:'none',
+						secure: true,
+					});
 					res.status(200).send({
 						user: user.id,
 					});

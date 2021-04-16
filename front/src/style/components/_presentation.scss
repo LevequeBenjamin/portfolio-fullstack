@@ -1,4 +1,5 @@
 .presentation-container {
+	min-height: 850px;
 	height: 100vh;
 	margin-top: 45px;
 	max-width: 1190px;
@@ -9,7 +10,7 @@
 	.presentation-center {
 		height: 100%;
 		display: grid;
-		grid-template-rows: 80% 20%;
+		grid-template-rows: 75% 25%;
 		.presentation-justify{
 			display: flex;
 			flex-direction: column;
@@ -124,10 +125,15 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			padding-left: 10px;
+			padding-right: 10px;
 			h3 {
 				font-family: $font-1;
 				font-size: 1.8rem;
 				margin-bottom: 10px;
+			}
+			span{
+				color: $color-1;
 			}
 		}
 	}

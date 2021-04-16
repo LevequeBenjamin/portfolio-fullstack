@@ -1,0 +1,23 @@
+@media screen and(max-width: 767px) {
+	.contact-container {
+    grid-template-rows: 15% 75%;
+    min-height: 1400px;
+    .title-contact{
+      h3{
+        font-size: 2rem !important;
+      }
+      p{
+        text-align: center;
+      }
+    }
+		.contact {
+			grid-template-columns: 1fr;
+      #message{
+        width: 90%;
+      }
+      .button{
+        margin: 20px auto;
+      }
+		}
+	}
+}

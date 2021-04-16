@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "admin",
-    "password": "openclassrooms",
-    "database": "database_development_portfolio",
-    "host": "127.0.0.1",
+    "username": "j1n4pvvvga2wur2w",
+    "password": "lk48i0mrrj23w23f",
+    "database": "w2fixh059k5yjcsr",
+    "host": "yvu4xahse0smimsc.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "admin",
-    "password": "openclasrooms",
-    "database": "database_test_portfolio",
-    "host": "127.0.0.1",
+    "username": "j1n4pvvvga2wur2w",
+    "password": "lk48i0mrrj23w23f",
+    "database": "w2fixh059k5yjcsr",
+    "host": "yvu4xahse0smimsc.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "admin",
-    "password": "openclasrooms",
-    "database": "database_production_portfolio",
-    "host": "127.0.0.1",
+    "username": "j1n4pvvvga2wur2w",
+    "password": "lk48i0mrrj23w23f",
+    "database": "w2fixh059k5yjcsr",
+    "host": "yvu4xahse0smimsc.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

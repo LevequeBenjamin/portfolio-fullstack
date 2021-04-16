@@ -20,7 +20,7 @@ const Logout = () => {
 		// methode get
 		await axios({
 			method: 'get',
-			url: 'http://localhost:5000/api/user/logout',
+			url: 'https://api-benjamin-codeur.herokuapp.com/api/user/logout',
 			withCredentials: true,
 		})
 			// on supprime le cookie jwt
@@ -32,9 +32,9 @@ const Logout = () => {
 	};
 
 	return (
-		<li onClick={logout}>
+		<div onClick={logout}>
 			<img src="./img/icons/logout.svg" alt="logout" />
-		</li>
+		</div>
 	);
 };
 /* ******************** Logout end ******************** */

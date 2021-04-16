@@ -10,7 +10,8 @@
 .contact-container {
 	display: grid;
 	grid-template-rows: 20% 80%;
-	height: 100vh;
+	min-height: 100vh;
+	min-height: 1000px;
 	padding-top: 48px;
 	max-width: 1190px;
 	margin-left: auto;
@@ -85,8 +86,9 @@
 			#not-mail {
 				display: none;
 				position: absolute;
-				top: 8px;
-				left: 100px;
+				top: 12px;
+				width: 120px;
+				left: 115px;
 				color: $red;
 				right: 0;
 				transform-origin: 50% 50%;

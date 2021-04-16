@@ -1,0 +1,13 @@
+@media screen and(max-width: 650px) {
+.parcours-container{
+  min-height: 1400px;
+  .parcours-description{
+    h3{
+      font-size: 2rem !important;
+    }
+  }
+  .parcours-schema{
+    grid-template-columns: 1fr !important;
+  }
+}
+}

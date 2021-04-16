@@ -1,8 +1,12 @@
+// ******************** components/projects/NewProjectForm.js ******************** //
+
+// imports
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPost, getPosts } from '../../actions/post.actions';
 import { isEmpty } from '../Utils';
 
+/* ******************** NewProjectForm ******************** */
 const NewProjectForm = () => {
 	// useState
 	const [isLoading, setIsLoading] = useState(false);
@@ -69,7 +73,7 @@ const NewProjectForm = () => {
 						<div className="previ-container">
 							<div className="form-flex">
 								<div className="form-relative">
-									<label htmlFor="title">title</label> 
+									<label htmlFor="title">title</label>
 									<textarea
 										name="title"
 										id="title"
@@ -166,14 +170,16 @@ const NewProjectForm = () => {
 							{!isEmpty(error.errorContent) && (
 								<p className="error">{error.errorContent}</p>
 							)}
-							<div className='btn-newPost'>
-							{file && (
-									<button onClick={() => setImageUrl('')}>Supprimer image</button>
+							<div className="btn-newPost">
+								{file && (
+									<button onClick={() => setImageUrl('')}>
+										Supprimer image
+									</button>
 								)}
 								<button className="send" onClick={handlePost}>
 									Envoyer
 								</button>
-								</div>
+							</div>
 						</div>
 					</div>
 				</>
@@ -181,5 +187,7 @@ const NewProjectForm = () => {
 		</div>
 	);
 };
+/* ******************** NewProject end******************** */
 
+// export
 export default NewProjectForm;

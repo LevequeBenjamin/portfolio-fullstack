@@ -1,7 +1,12 @@
+// ******************** components/Presentation.js ******************** //
+
+// imports
 import React from 'react';
 import Typical from 'react-typical';
 import Fade from 'react-reveal/Fade';
+import Jump from 'react-reveal/Jump';
 
+/* ******************** Presentation ******************** */
 const Presentation = () => {
 	return (
 		<div className="presentation-center">
@@ -24,31 +29,51 @@ const Presentation = () => {
 						<h1>Benjamin Lévêque</h1>
 						<h2>
 							<Typical
-								steps={['Développeur', 1000, 'Développeur Web Back-end!', 500]}
+								steps={[
+									'Développeur',
+									1000,
+									'Développeur Web Back-end!',
+									1000,
+									'Développeur web react',
+									1000,
+									'Développeur web mobile',
+									1000,
+									'Développeur web fullstack',
+									1000,
+									'Bonne visite !',
+									1000,
+								]}
 								loop={Infinity}
 								wrapper="p"
 							/>
 						</h2>
 					</div>
 				</Fade>
-
-				<div className="telecharger">
-					<a href="./media/CVLevequeBenjamin.pdf" target="_blank">
-						Télécharger CV
-					</a>
-				</div>
+				<Jump>
+					<div className="telecharger">
+						<a href="./media/CVLevequeBenjamin.pdf" target="_blank">
+							Télécharger CV
+						</a>
+					</div>
+				</Jump>
 			</div>
 			<Fade bottom cascade>
 				<div className="description-container">
 					<h3>Bienvenue Dans Mon Univers</h3>
 					<p>
-						Je suis développeur web Back-end spécialisé nodeJs et django avec
-						une aspiration pour le front avec react.
+						Je suis <strong>développeur web Back-end</strong> spécialisé{' '}
+						<strong>nodeJs</strong> et <strong>django</strong> avec une
+						aspiration pour le <strong>front</strong> avec{' '}
+						<strong>react</strong>. Je m'interresse également à la partie{' '}
+						<strong>mobile</strong> avec <strong>dart</strong> et{' '}
+						<strong>flutter</strong>.
 					</p>
 				</div>
 			</Fade>
 		</div>
 	);
 };
+/* ******************** Presentation end ******************** */
 
+// export
 export default Presentation;

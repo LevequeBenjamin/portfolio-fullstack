@@ -1,3 +1,6 @@
+// ******************** components/Portfolio.js ******************** //
+
+// imports
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts } from '../actions/post.actions';
@@ -5,6 +8,7 @@ import { isEmpty } from '../components/Utils';
 import Project from './projects/Project';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
+/* ******************** Portfolio ******************** */
 const Portfolio = () => {
 	// useState
 	const [loadPost, setLoadPost] = useState(true);
@@ -40,7 +44,7 @@ const Portfolio = () => {
 							className={index === current ? 'slide active' : 'slide'}
 							key={index}
 						>
-							{index === current &&(
+							{index === current && (
 								<Project project={project} key={project.id} />
 							)}
 						</div>
@@ -49,5 +53,7 @@ const Portfolio = () => {
 		</div>
 	);
 };
+/* ******************** Protfolio end ******************** */
 
+// export
 export default Portfolio;

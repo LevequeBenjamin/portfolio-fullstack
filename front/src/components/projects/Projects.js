@@ -1,6 +1,10 @@
+// ******************** components/projects/Projects.js ******************** //
+
+// imports
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 
+/* ******************** Projects ******************** */
 const Projects = ({ project }) => {
 	let stacks = project.stack.split(',');
 
@@ -38,5 +42,7 @@ const Projects = ({ project }) => {
 		</>
 	);
 };
+/* ******************** Projects end ******************** */
 
+// export
 export default Projects;

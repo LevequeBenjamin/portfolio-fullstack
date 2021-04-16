@@ -1,7 +1,11 @@
+// ******************** components/Contact.js ******************** //
+
+// imports
 import React from 'react';
 import ContactForm from './ContactForm';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+/* ******************** Contact ******************** */
 const Contact = () => {
 	return (
 		<div className="contact">
@@ -17,14 +21,16 @@ const Contact = () => {
 				<div className="phone">
 					<div className="content">
 						<h4>téléphone</h4>
-						<CopyToClipboard text="+33642828806" className='hover'>
+						<CopyToClipboard text="+33642828806" className="hover">
 							<p
 								style={{ cursor: 'pointer' }}
 								className="clipboard"
 								onClick={() => {
 									alert('Téléphone copié !');
 								}}
-							>+33642828806</p>
+							>
+								+33642828806
+							</p>
 						</CopyToClipboard>
 					</div>
 				</div>
@@ -48,5 +54,7 @@ const Contact = () => {
 		</div>
 	);
 };
+/* ******************** Contact end ******************** */
 
+// export
 export default Contact;

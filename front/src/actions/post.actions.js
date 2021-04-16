@@ -16,7 +16,7 @@ export const getPosts = () => {
 	return dispatch => {
 		return axios({
 			method: 'get',
-			url: 'http://localhost:5000/api/post',
+			url: 'https://api-benjamin-codeur.herokuapp.com/api/post',
 			withCredentials: true,
 		})
 			.then(res => {
@@ -32,7 +32,7 @@ export const addPost = data => {
 	return dispatch => {
 		return axios({
 			method: 'post',
-			url: 'http://localhost:5000/api/post',
+			url: 'https://api-benjamin-codeur.herokuapp.com/api/post',
 			data: data,
 			withCredentials: true,
 		}).then(res => {
@@ -51,7 +51,7 @@ export const deletePost = postId => {
 	return dispatch => {
 		return axios({
 			method: 'delete',
-			url: `http://localhost:5000/api/post/${postId}`,
+			url: `https://api-benjamin-codeur.herokuapp.com/api/post/${postId}`,
 			withCredentials: true,
 		})
 			.then(res => {

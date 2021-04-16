@@ -1,6 +1,6 @@
 .parcours-container {
 	height: 100vh;
-	height: 100vh;
+	min-height: 800px;
 	margin-top: 45px;
 	max-width: 1190px;
 	margin-left: auto;
@@ -14,11 +14,22 @@
 		align-items: center;
 		justify-content: space-around;
 		.parcours-description {
+			padding-left: 10px;
+			padding-right: 10px;
 			h3 {
 				color: $color-dark-5;
 				font-size: 3rem;
 				font-family: $font-1;
 				margin-bottom: 30px;
+			}
+			span{
+				color: $color-1;
+			}
+			a{
+				color: $color-dark-5;
+				&:hover{
+					color: $color-1;
+				}
 			}
 		}
 		.parcours-schema {

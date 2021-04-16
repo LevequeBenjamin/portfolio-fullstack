@@ -2,12 +2,7 @@
 
 // imports
 import React from 'react';
-import {
-	BrowserRouter as Router,
-	Redirect,
-	Route,
-	Switch,
-} from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Admin from '../../pages/Admin';
 import ProjectPage from '../../pages/ProjectPage';
@@ -18,7 +13,7 @@ import ContactPage from '../../pages/ContactPage';
 /* ******************** index ******************** */
 const index = () => {
 	return (
-		<Router>
+		<HashRouter>
 			<Navbar />
 			<Switch>
 				<Route path="/" exact component={Home} />
@@ -28,7 +23,7 @@ const index = () => {
 				<Redirect to="/" />
 			</Switch>
 			<Footer />
-		</Router>
+		</HashRouter>
 	);
 };
 /* ******************** index end ******************** */

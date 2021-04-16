@@ -2,31 +2,24 @@
 
 // imports
 const models = require('../models');
-const fs = require('fs');
-const { promisify } = require('util');
-const pipeline = promisify(require('stream').pipeline);
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+	cloud_name: process.env.CLOUDINARY_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 /* ******************** createPost ******************** */
 exports.createPost = async (req, res) => {
 	let { title, content, video, lienGithub, date, stack } = req.body;
 	let userId = req.userId;
 
-	let filename;
-
-	if (req.file != null) {
-		filename = userId + Date.now() + '.jpg';
-
-		await pipeline(
-			req.file.stream,
-			fs.createWriteStream(`${__dirname}/../../front/public/uploads/posts/${filename}`),
-		);
-	}
-
 	try {
 		await models.Post.create({
 			title: title,
 			content: content,
-			imageUrl: req.file != null ? './uploads/posts/' + filename : '',
+			imageUrl: req.file.path,
 			UserId: userId,
 			video: video,
 			lienGithub: lienGithub,
@@ -117,18 +110,9 @@ exports.deletePost = async (req, res) => {
 		const post = await models.Post.findOne({
 			where: { id: postId },
 		});
-		let filename = post.dataValues.imageUrl.split('/uploads/')[1];
-		if (filename !== undefined) {
-			fs.unlink(`${__dirname}/../../front/public/uploads/${filename}`, function (err) {
-				if (err) {
-					console.log('error');
-				} else {
-					console.log('fichier supprimé');
-				}
-			});
-		}
 
 		if (post) {
+			await cloudinary.uploader.destroy(post.imageUrl)
 			await post
 				.destroy()
 				.then(res.status(200).send({ message: 'post supprimé !' }))

@@ -1,7 +1,11 @@
+// ******************** components/projects/AdminProject.js ******************** //
+
+// imports
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../../actions/post.actions';
 
+/* ******************** AdminProject ******************** */
 const AdminProject = ({ project }) => {
 	// useState
 	const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +20,6 @@ const AdminProject = ({ project }) => {
 
 	return (
 		<div className="project-admin">
-			
 			<div className="img-container">
 				<img src={project.imageUrl} alt={project.title} />
 			</div>
@@ -45,5 +48,7 @@ const AdminProject = ({ project }) => {
 		</div>
 	);
 };
+/* ******************** AdminProject ******************** */
 
+// export
 export default AdminProject;

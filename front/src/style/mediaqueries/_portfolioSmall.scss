@@ -1,0 +1,43 @@
+@media screen and(max-width: 650px) {
+	.portfolio-container {
+		.project-title {
+			h3 {
+				font-size: 2rem !important;
+			}
+			p {
+				text-align: center;
+			}
+		}
+		.project-container {
+			.left-arrow {
+				left: 10px;
+			}
+			.right-arrow {
+				right: 10px;
+			}
+		}
+	}
+}
+@media screen and(max-width: 650px) {
+	.portfolio-container {
+		.project-container {
+			.left-arrow {
+				left: 10px;
+				top: 81.5%;
+			}
+			.right-arrow {
+				right: 10px;
+				top: 81.5%;
+			}
+		}
+	}
+}
+@media screen and(max-width: 375px) {
+	.portfolio-container {
+		.project-container {
+			.project {
+				width: 310px !important;
+			}
+		}
+	}
+}

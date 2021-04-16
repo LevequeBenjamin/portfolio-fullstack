@@ -30,7 +30,7 @@ const SignInForm = () => {
 		// methode post, on passe email et password en data
 		axios({
 			method: 'post',
-			url: 'http://localhost:5000/api/user/login',
+			url: 'https://api-benjamin-codeur.herokuapp.com/api/user/login',
 			withCredentials: true,
 			data: {
 				email,
@@ -38,6 +38,7 @@ const SignInForm = () => {
 			},
 		})
 			.then(res => {
+				console.log(res);
 				// on attrape les erreurs et on les affiche
 				if (
 					res.data.errorEmail ||

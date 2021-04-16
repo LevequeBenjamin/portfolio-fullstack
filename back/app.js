@@ -1,4 +1,4 @@
-/* ******************** app.js CONTIENT NOTRE APPLICATION ******************** */
+// ******************** app.js CONTIENT NOTRE APPLICATION ******************** //
 
 // imports
 const express = require('express');
@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const userRoutes = require('./routes/user.routes');
 const postRoutes = require('./routes/post.routes');
-const { requireAuth, checkAdmin } = require('./middleware/auth.middleware');
+const { checkAdmin } = require('./middleware/auth.middleware');
 require('dotenv').config({ path: './config/.env' });
 
 const app = express();
@@ -16,14 +16,15 @@ const app = express();
 const corsOptions = {
 	origin: process.env.CLIENT_URL,
 	credentials: true,
-	allowedHeaders: ['sessionId', 'Content-Type'],
+	AllowCredentials: true,
+	allowedHeaders: ['sessionId','Content-Type','Origin','X-Requested-With','Content','Accept','Authorization'],
 	exposedHeaders: ['sessionId'],
-	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
 	preflightContinue: false,
 };
 app.use(cors(corsOptions));
 
-// Options pour sécuriser les cookies
+//Options pour sécuriser les cookies
 const hour = 3 * 24 * 60 * 60 * 1000;
 const expiryDate = new Date(Date.now() + hour);
 app.set('trust proxy', 1); // trust first proxy
@@ -31,6 +32,7 @@ app.use(
 	session({
 		secret: process.env.SEC_SES,
 		name: 'sessionId',
+		sameSite:'none',
 		resave: false,
 		saveUninitialized: true,
 		cookie: {
@@ -50,7 +52,7 @@ app.use(helmet());
 //app.get('*', requireAuth);
 app.get('/jwtid', checkAdmin, (req, res) => {
 	res.status(200).json(req.userId);
-}); 
+});
 
 // routes
 app.use('/api/user', userRoutes);

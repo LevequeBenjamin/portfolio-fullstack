@@ -1,0 +1,17 @@
+@media screen and(max-width: 650px) {
+  .presentation-container{
+    .presentation-justify{
+      .title-container{
+      h1{
+        line-height: 3rem;
+        
+      }}
+    }
+    .description-container{
+      h3{
+        line-height: 2rem;
+        font-size: 1.4rem !important;
+      }
+    }
+  }
+}

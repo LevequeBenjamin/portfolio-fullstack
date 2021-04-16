@@ -1,6 +1,11 @@
+// ******************** components/ContactForm.js ******************** //
+
+// imports
 import React from 'react';
 import { useState } from 'react';
+import Jump from 'react-reveal/Jump';
 
+/* ******************** ContactForm ******************** */
 const ContactForm = () => {
 	const [name, setName] = useState('');
 	const [company, setCompany] = useState('');
@@ -12,7 +17,6 @@ const ContactForm = () => {
 	const [focusedPhone, setFocusedPhone] = useState(false);
 	const [focusedEmail, setFocusedEmail] = useState(false);
 	const [focusedMessage, setFocusedMessage] = useState(false);
-	
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -103,43 +107,62 @@ const ContactForm = () => {
 	return (
 		<form className="contact-form">
 			<div className="form-content">
-				<div className='form-relative'>
-				<label id='nameLabel' htmlFor='name' style={{top: focusedName ? '-5px' : ''}}>nom *</label>
-				<input
-					type="text"
-					id="name"
-					name="name"
-					required
-					onChange={e => setName(e.target.value)}
-					value={name}
-					onFocus={() => setFocusedName(true)}
-				/>
+				<div className="form-relative">
+					<label
+						id="nameLabel"
+						htmlFor="name"
+						style={{ top: focusedName ? '-5px' : '' }}
+					>
+						nom *
+					</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						required
+						onChange={e => setName(e.target.value)}
+						value={name}
+						onFocus={() => setFocusedName(true)}
+					/>
 				</div>
-				<div className='form-relative'>
-				<label htmlFor='compagny' style={{top: focusedCompany ? '-5px' : ''}}>société</label>
-				<input
-					type="text"
-					id="company"
-					name="company"
-					onChange={e => setCompany(e.target.value)}
-					value={company}
-					onFocus={() => setFocusedCompany(true)}
-				/>
+				<div className="form-relative">
+					<label
+						htmlFor="company"
+						style={{ top: focusedCompany ? '-5px' : '' }}
+					>
+						société
+					</label>
+					<input
+						type="text"
+						id="company"
+						name="company"
+						onChange={e => setCompany(e.target.value)}
+						value={company}
+						onFocus={() => setFocusedCompany(true)}
+					/>
 				</div>
-				<div className='form-relative'>
-				<label htmlFor='phone' style={{top: focusedPhone ? '-5px' : ''}}>téléphone</label>
-				<input
-					type="text"
-					id="phone"
-					name="phone"
-					onChange={e => setPhone(e.target.value)}
-					value={phone}
-					onFocus={() => setFocusedPhone(true)}
-				/>
+				<div className="form-relative">
+					<label htmlFor="phone" style={{ top: focusedPhone ? '-5px' : '' }}>
+						téléphone
+					</label>
+					<input
+						type="text"
+						id="phone"
+						name="phone"
+						onChange={e => setPhone(e.target.value)}
+						value={phone}
+						onFocus={() => setFocusedPhone(true)}
+					/>
 				</div>
 				<div className="email-content">
 					<label id="not-mail">Email non valide</label>
-					<label id="emailLabel" htmlFor='email' style={{top: focusedEmail ? '-5px' : ''}}>email *</label>
+					<label
+						id="emailLabel"
+						htmlFor="email"
+						style={{ top: focusedEmail ? '-5px' : '' }}
+					>
+						email *
+					</label>
 					<input
 						type="mail"
 						id="email"
@@ -150,27 +173,37 @@ const ContactForm = () => {
 						onFocus={() => setFocusedEmail(true)}
 					/>
 				</div>
-				<div className='form-relative'>
-				<label id="messageLabel" htmlFor='message' style={{top: focusedMessage ? '-5px' : ''}}>message *</label>
-				<textarea
-					id="message"
-					name="message"
-					onChange={e => setMessage(e.target.value)}
-					value={message}
-					required
-					onFocus={() => setFocusedMessage(true)}
-				/>
+				<div className="form-relative">
+					<label
+						id="messageLabel"
+						htmlFor="message"
+						style={{ top: focusedMessage ? '-5px' : '' }}
+					>
+						message *
+					</label>
+					<textarea
+						id="message"
+						name="message"
+						onChange={e => setMessage(e.target.value)}
+						value={message}
+						required
+						onFocus={() => setFocusedMessage(true)}
+					/>
 				</div>
 			</div>
-			<input
-				className="button hover"
-				type="submit"
-				value="envoyer"
-				onClick={handleSubmit}
-			/>
+			<Jump>
+				<input
+					className="button hover"
+					type="submit"
+					value="envoyer"
+					onClick={handleSubmit}
+				/>
+			</Jump>
 			<div className="form-message"></div>
 		</form>
 	);
 };
+/* ******************** ContactForm ******************** */
 
+// export
 export default ContactForm;

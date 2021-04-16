@@ -1,6 +1,7 @@
 .portfolio-container {
 	position: relative;
 	height: 100vh;
+	min-height: 900px;
 	margin-top: 45px;
 	max-width: 1190px;
 	margin-left: auto;
@@ -13,6 +14,8 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding-left: 10px;
+		padding-right: 10px;
 		h3 {
 			margin-bottom: 20px;
 			font-size: 3rem;
@@ -88,17 +91,18 @@
 				width: 65px;
 				border-radius: 5px;
 				text-align: center;
+				color: white;
 			}
 			.HTML {
-				background-color: #5E8E8E;
+				background-color: #5e8e8e;
 			}
 			.Css {
-				background-color: #A04773;
+				background-color: #a04773;
 			}
-			.Sass{
+			.Sass {
 				background-color: #2ecc71;
 			}
-			.Bootstrap{
+			.Bootstrap {
 				background-color: #3498db;
 			}
 			.ReactJS {
@@ -110,10 +114,10 @@
 			.NodeJS {
 				background-color: #8d3c3b;
 			}
-			.Javascript{
+			.Javascript {
 				background-color: #f1c40f;
 			}
-			.MongoDB{
+			.MongoDB {
 				background-color: #38ada9;
 			}
 		}
@@ -130,6 +134,7 @@
 		align-items: center;
 		justify-content: center;
 		color: $white;
+		font-weight: bold;
 		font-size: 0.8rem;
 		&:hover {
 			background-color: $color-dark-5;

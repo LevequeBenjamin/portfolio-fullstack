@@ -43,7 +43,7 @@ const ContactForm = () => {
 		};
 
 		if (name && isEmail() && message) {
-			const templateId = 'template_zx0hxyr';
+			const templateId = '';
 
 			nameS.classList.remove('red');
 			emailS.classList.remove('red');
@@ -77,7 +77,7 @@ const ContactForm = () => {
 		let formMess = document.querySelector('.form-message');
 
 		window.emailjs
-			.send('service_cjdnl68', templateId, variables)
+			.send('', templateId, variables)
 			.then(res => {
 				formMess.innerHTML =
 					'Message envoyé ! Nous vous recontacterons dès que possible.';
